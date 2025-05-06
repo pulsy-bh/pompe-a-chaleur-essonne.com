@@ -122,4 +122,3 @@ Then apply them to the site:
 Ps : make sure the images are not webp format , is that's the case please convert them , changing the extension is not gonna work (the problem is only on the server side , all gonna work locally fine ) .
 
 If needed, the complete documentation is here: [Jekyll Picture Tag](https://rbuchberger.github.io/jekyll_picture_tag/)
-# pompe-a-chaleur-essonne.com
