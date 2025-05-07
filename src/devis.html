@@ -1,0 +1,126 @@
+---
+layout: default
+permalink: /devis
+title: Devis
+description: Devis
+---
+
+<section class="section-padding" id="devis">
+	<div class="container">
+		<div class="form-top">
+			<span>Formulaire de devis</span>
+		</div>
+		<div class="card">
+			<div class="row">
+
+				<div class="col-sm-12">
+					<form action="https://formspree.io/f/id_formspree" method="POST">
+					<div class="row">
+						<div class="col-sm-5">
+							<fieldset>
+								<legend>Coordonnées</legend>
+
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="firstname">Prénom*</label>
+											<input required type="text" class="form-control " id="firstname" name="firstname" value="">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label for="lastname">Nom*</label>
+											<input required type="text" class="form-control " id="lastname" name="lastname" value="">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-5">
+										<div class="form-group">
+											<label for="zipcode">Code postal*</label>
+											<input required type="text" class="form-control " id="zipcode" name="zipcode" value="">
+										</div>
+									</div>
+									<div class="col-sm-7">
+										<div class="form-group">
+											<label for="city">Ville*</label>
+											<input type="text" class="form-control" id="city" name="city" value="">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="address">Adresse*</label>
+											<input required type="text" class="form-control " id="address" name="address" value="">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="email">E-mail*</label>
+											<input required type="text" class="form-control " id="email" name="email" value="">
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="phone">Téléphone*</label>
+											<input required type="text" class="form-control " id="phone" name="phone" value="">
+										</div>
+									</div>
+								</div>
+							</fieldset>
+
+						</div>
+
+						<div class="col-sm-6 col-sm-offset-1">
+							<fieldset>
+								<legend>Demande</legend>
+								<div class="form-group">
+									<div class="checkbox" style="margin-top: 0;">
+										<label><input type="checkbox" name="checkbox1">Plomberie</label>
+									</div>
+									<div class="checkbox" style="margin-top: 0;">
+										<label><input type="checkbox" name="checkbox2">Chauffagiste</label>
+									</div>
+									<div class="checkbox" style="margin-top: 0;">
+										<label><input type="checkbox" name="checkbox3">Installation chaudière</label>
+									</div>
+									<div class="checkbox" style="margin-top: 0;">
+										<label><input type="checkbox" name="checkbox4">Contrat d'entretien & maintenance</label>
+									</div>
+									<div class="checkbox" style="margin-top: 0;">
+										<label><input type="checkbox" name="checkbox5" >Dépannage Chaudière</label>
+									</div>
+									<div class="checkbox" style="margin-top: 0;">
+										<label><input type="checkbox" name="checkbox6">Ballon thermodynamique</label>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label for="message">Message</label>
+											<textarea rows="6" name="message" class="form-control" id="message"></textarea>
+										</div>
+									</div>
+								</div>
+
+							</fieldset>
+						</div>
+					</div>
+					<br><br><br><br>
+					<br>
+					<div class="buttondevis text-center">
+						<button type="submit" name="devis" class="button">Envoyer</button>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

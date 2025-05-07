@@ -1,0 +1,73 @@
+---
+layout: default
+title: Nos réalisations
+permalink: /nos-realisations
+images:
+  - title: Pompe à chaleur
+    path: img/1.jpg
+  - title: Pompe à chaleur 2
+    path: img/2.jpg
+  - title: Pompe à chaleur 3
+    path: img/3.jpg
+  - title: Pompe à chaleur 4
+    path: img/4.jpg
+  - title: Pompe à chaleur 5
+    path: img/5.jpg
+  - title: Pompe à chaleur 6
+    path: img/6.jpg
+  - title: Pompe à chaleur 7
+    path: img/7.jpg
+  - title: Pompe à chaleur 8
+    path: img/8.jpg
+  - title: Pompe à chaleur 9
+    path: img/9.jpg
+  - title: Pompe à chaleur 10
+    path: img/10.jpg
+  - title: Pompe à chaleur 11
+    path: img/11.jpg
+  - title: Pompe à chaleur 12
+    path: img/12.jpg
+  - title: Pompe à chaleur 13
+    path: img/13.jpg
+  - title: Pompe à chaleur 14
+    path: img/14.jpg
+  - title: Pompe à chaleur 15
+    path: img/15.jpg
+  - title: Pompe à chaleur 16
+    path: img/16.jpg
+  - title: Pompe à chaleur 17
+    path: img/17.jpg
+---
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+<section class="section-padding">
+    <div class="container text-center">
+        <h2>Notre travail en image</h2>
+        <br>
+        {% assign rowCount = 0 %}
+        <div class="row">
+            {% for image in page.images %}
+                <div class="col-sm-4">
+                    <span class="preview">
+                        <a href="{{ site.baseurl }}/assets/{{ image.path }}" title="Image" download="{{ site.baseurl }}/assets/{{ image.path }}" data-gallery>
+                            <img src="{{ site.baseurl }}/assets/{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
+                        </a>
+                    </span>
+                </div>
+                {% assign rowCount = rowCount | plus: 1 %}
+                {% if rowCount | modulo: 3 == 0 and forloop.last != true %}
+                    <!-- </div><div class="row"> -->
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

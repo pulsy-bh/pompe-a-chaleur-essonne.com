@@ -1,0 +1,48 @@
+---
+layout: default
+permalink: /legales-mention
+title: Mentions légales
+description: Mentions légales
+---
+
+<section class="section-padding">
+    <div class="container" id="mentions-legales">
+        <h1>Mentions légales</h1>
+        <br><br>
+        <p>Ces informations concernent explicitement le site Internet <b><?=$conf_name_website?></b>.</p>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Propriétaire</h3>
+            </div>
+            <div class="panel-body">
+                <h2><?=$conf_owner?></h2>
+                Société à responsabilité limitée au capital de <?=$conf_capital?> €,<br>
+                Dont le siège social est établi <?=$conf_headOffice?><br>
+                Immatriculée au Registre du Commerce et des Sociétés sous le numéro RCS <?=$conf_rcs?><br>
+                Directeur de la publication <?=$conf_comDirector?>
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Éditeur</h3>
+            </div>
+            <div class="panel-body">
+                    <h2>BH Internet</h2>
+                    Enseigne de ZegZel<br>
+                    Société à responsabilité limitée au capital de 6 000 €,<br>
+                    Dont le siège social est établi 48, boulevard des Coquibus 91000 Évry<br>
+                    Immatriculée au Registre du Commerce et des Sociétés sous le numéro RCS Evry B 749 951 604
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Hébergeur</h3>
+            </div>
+            <div class="panel-body">
+                {{ site.data.company.hebergement }}
+            </div>
+        </div>
+    </div>
+    </section>

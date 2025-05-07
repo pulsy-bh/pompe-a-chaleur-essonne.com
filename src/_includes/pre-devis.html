@@ -1,53 +1,58 @@
-<div class="pre-reservation">
-    <h3>Votre ambulance en quelques clics </h3>
-    <form action="https://formspree.io/f/xjkwvzkn" method="POST" class="p20">
-           <div class="row" >
-                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 clabel">
-                    <div class="form-group has-feedback ico1">
-                        <input type="text" name="nom" class="form-control" placeholder="Nom">
+<div class="predevis">
+    <!-- <div class="form-top">
+        <span>Simulez votre crédit</span>
+    </div> -->
+    <div class="inner-predevis">
+        <form action="https://formspree.io/f/xjkwvzkn" method="POST">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control " id="lastname" name="lastname" value=""
+                            placeholder="Nom">
                     </div>
                 </div>
+                <div class="col-sm-6">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control " id="email" name="email" value="" placeholder="Email">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control " id="phone" name="phone" value=""
+                            placeholder="Téléphone">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group has-feedback">
+                        <select class="form-control" name="select1" id="select1">
+                            <option value="">Prestations:</option>
+                            <option value="Pompes à chaleur">Pompes à chaleur</option>
+                            <option value="Climatisation">Climatisation</option>
+                            <option value="Ballon thermodynamique">Ballon thermodynamique</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  clabel">
-                    <div class="form-group has-feedback ico2">
-                        <input type="tel" name="telephone" class="form-control" placeholder="Téléphone">
-                    </div>
-                </div>
-             </div>
-            <div class="row" >
-                <div class="col-xs-12 clabel ">
-                    <div class="padl form-group has-feedback ico3">
-                        <input type="email" name="email" class="form-control" placeholder="E-mail">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group has-feedback">
+
+                        <textarea class="form-control" name="message" rows="6" placeholder="Message"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="row" >
-                <div class="col-sm-6">
-                    <div class="form-group has-feedback">
-                        <div class="input-group bootstrap-datepicker">
-                             <span class="input-group-addon"><span class="fa fa-calendar fa-fw"></span></span>
-                            <input type="date" name="date-prise-en-charge" class="form-control" placeholder="Date de la prise en charge">
-                        </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <div class="form-group">
+                        <button type="submit" name="devis" class="button large">Envoyer</button>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="form-group has-feedback">
-                        <div class="input-group clockpicker">
-                            <span class="input-group-addon"><span class="fa fa-clock-o fa-fw"></span></span>
-                            <input type="time" name="heure-prise-en-charge" class="form-control" placeholder="Heure">
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-sm-12">
-                    <div class="form-group has-feedback ico4">
-                        <textarea name="message" class="form-control" rows="4" placeholder="Message"></textarea>
-                    </div>
-                  </div>
             </div>
-            <div class="text-left">
-                <input id="btSubmit" class="button" type="submit" value="Envoyer">
-            </div> 
-        <br>
-    </form>
+        </form>
+    </div>
 </div>
-

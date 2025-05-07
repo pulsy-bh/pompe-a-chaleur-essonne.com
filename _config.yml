@@ -27,6 +27,8 @@
 # baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://pulsy-bh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/pompe-a-chaleur-essonne.com"
+# baseurl: ""
+
 # Build settings
 plugins:
   - jekyll-sitemap #https://github.com/jekyll/jekyll-sitemap
@@ -36,6 +38,8 @@ plugins:
 # Where things are
 source              : ./src
 destination         : ./_site
+
+
 # layouts_dir         : _layouts # Don't rename this, watch wouldn't't work
 # data_dir            : _data # Don't rename this, watch wouldn't't work
 # includes_dir        : _includes # Don't rename this, watch wouldn't't work

@@ -1,56 +1,29 @@
 ####################
 # CONFIG
 ####################
-name: "Action Ambulance"
-streetAddress: "80 rue Charles Fourier"
-addressLocality: "Vitry Sur Seine"
-addressRegion: "Ile-de-France"
-postalCode: "94400"
-addressCountry: "France"
-url: "https://www.ambulance-94.com/"
-logo: "https://www.ambulance-94.com/img/logo.jpg"
-image: "https://www.ambulance-94.com/img/ambulance_vitry.jpg"
-description: "Notre entreprise spécialisée dans les services ambulanciers dans le 94 est à votre disposition pour tout transport sanitaire que ce soit en urgence ou non. Qu'il s'agisse d'une consultation médicale, d'un transport opérationnel ou d'une prise en charge, nos ambulanciers est prête à vous aider pour tous vos besoins."
-phone1: "01 85 53 70 44"
-phone2: "06 61 61 61 61"
-phones:
-    - "01 85 53 70 44"
-    - "06 61 61 61 61"
-address:
-    street: "80 rue Charles Fourier"
-    city: "Vitry Sur Seine"
-    postalCode: "94400"        
-    geo:
-        latitude: "48.80°N"
-        longitude: "2.40°E"
-    openingHours: "Mo, Tu, We, Th, Fr, Sa, Su 01:00-23:30"
-    contactPoint:
-        telephone: "01 85 53 70 44"
-        contactType: "téléphone"
-conf_name: "Action Ambulance"
-conf_address: "80 rue Charles Fourier"
-conf_zipCode: "94400 "
-conf_city: "Vitry Sur Seine "
-conf_googleMap: ""
+#Coordonnées entreprise
+name: "MBP"
+address: "42 Bis rue Jean Corringer"
+zipCode: "91270"
+city: "Vigneux-sur-Seine"
+googleMap: ""
 
-call_phone1: "01 85 53 70 44"
-conf_phone1: "0185537044"
+siege_social: $address + ' ' + $zipCode + ' ' + $city
 
-conf_phone2: ""
-conf_fax: "01 00 00 00 00"
+call_phone: "01 85 53 75 90"
+phone: "0185537590"
 
-conf_id_company: 430
-conf_name_website: "ambulance-94.com"
-conf_addressOnline: "http://www.ambulance-94.com/"
+id_company: 144
+name_website: "pompe-a-chaleur-essonne.com"
+addressOnline: "http://www.pompe-a-chaleur-essonne.com"
 
-conf_email: "actionambulances@gmail.com"
-email: "actionambulances@gmail.com"
-conf_email_copie: "hedi@bhgroupe.fr"
-conf_email_copie2: "hind@bhgroupe.fr;adrien@bhgroupe.fr"
+email: "secretariat@sarlmbp.fr"
+email_copie: "direction@sarlmbp.fr"
 
 # Formulaires
-conf_email_formulaire1: $conf_email;
-conf_email_formulaire2: null;
+email_formulaire1: $email
+email_formulaire2: $email_copie #Pour en mettre plusieurs, séparer les adresses mail par ";"
+
 
 # Mentions Légales
 conf_owner: $conf_name

@@ -1,32 +1,70 @@
-<footer id="pre-contact">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<p><strong>Action Ambulance </strong></p>
-				<p>Action Ambulance propose des véhicules sanitaires aux normes et de qualité pour le confort et le bien-être des personnes souffrantes dans tout le Val-de-Marne et dans toute l’Île-de-France. Nos ambulanciers certifiés surveillent votre état de santé durant le transport vers l’établissement hospitalier en vous prodiguant les soins et les réanimations nécessaires à votre état de santé depuis quelques années.</p>
-				
-			</div>
-
-			<div class="col-sm-4">
-				<p><strong>Contactez-nous </strong></p>
-				 {% include pre-contact.html %}
-			</div>
-			<div class="col-sm-4">
-				<p><strong>Nos coordonnées</strong></p>
-				<p>Adresse : {{ site.data.company.streetAddress }} {{ site.data.company.postalCode }} {{ site.data.company.addressLocality }}</p>
-				<p>Téléphone : <a href="tel:{{ site.data.company.phone1 }}"> {{ site.data.company.phone1 }}</a></p>
-				<p>E-mail :<a href="mailto:{{ site.data.company.email }}"> {{ site.data.company.email }}</a> </p>
-				<p>Nos horaires : 7J/7 – 24H/24 </p>
-				<ul class="social">
-					<li><a href="#"  class="fa fa-facebook"></a></li>
-					<li><a href="#"  class="fa fa-twitter"></a></li>
-					<li><a href="#"  class="fa fa-google-plus"></a></li>
-				</ul>
-			</div>
+<footer>
+	<div class="top-footer text-center">
+		<h3>Une entreprise certifiée Qualipac Rge‎</h3>
+		<div class="rge-wrapper-footer">
+			<img src="{{ site.baseurl }}/assets/img/logo-eco-quali-pac.png" alt="eco quali pac" class="img-responsive">
+			<img src="{{ site.baseurl }}/assets/img/logo-manipulateur.jpg" alt="logo manipulateur"
+				class="img-responsive">
 		</div>
-		<div class="pad02"></div>
-		<div class="text-center">
-			<a href="" target="_blank">BHInternet - Création site internet | {{ site.time | date: '%Y' }}</a> | <a href="{{ site.data.company.ambulance_vitry_url }}">Ambulance Vitry</a>
+	</div>
+	<div class="bottom-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3 col-sm-offset-2">
+
+					<br>
+					<div class="inner-footer">
+						<p class="text-justify">
+							Nos professionnels sont à votre disposition pour répondre à toutes vos demandes concernant
+							le chauffage. Pour l'installation d'une nouvelle climatisation, le remplacement ou
+							l'entretien.
+						</p>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<h4>Plan du site</h4>
+
+					<div class="inner-footer">
+						<ul>
+							<li><a href="{{ site.baseurl }}/qui-sommes-nous">Qui sommes-nous ?</a></li>
+							<li><a href="{{ site.baseurl }}/nos-realisations">Nos realisations</a></li>
+							<li><a href="{{ site.baseurl }}/reservation">Devis gratuit</a></li>
+							<li><a href="{{ site.baseurl }}/contact">Contactez-nous</a></li>
+							<li><a href="{{ site.baseurl }}/pompe-a-chaleur-vigneux-sur-seine">Pompe à chaleur vigneux
+									sur seine</a></li>
+							<li><a href="{{ site.baseurl }}/sav-daikin-piece-detache">SAV daikin pièces détachées</a>
+							</li>
+							<li><a href="{{ site.baseurl }}/sav-pompe-a-chaleur-daikin">SAV pompe à chaleur daikin</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<h4>Contactez-nous</h4>
+					<div class="inner-footer">
+						<ul>
+							<li><strong>{{ site.data.company.name }}</strong></li>
+							<li>{{ site.data.company.address }}</li>
+							<li>{{ site.data.company.zipCode }} {{ site.data.company.city }}</li>
+							<li style="word-wrap:break-word;">{{ site.data.company.email }} / {{ site.data.company.email_copie }}</li>
+							<small>Contactez-nous au :</small><br>
+							<li>
+								<span class="colored">
+									<strong><a href="tel:{{ site.data.company.phone }}"><i class="fa fa-phone"
+												aria-hidden="true"></i> {{ site.data.company.call_phone }}</a></strong>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<!-- <div class="text-center">
+			BHInternet - Création site internet | {{ site.time | date: '%Y' }}
+			<br>
+		</div> -->
 		</div>
 	</div>
 </footer>

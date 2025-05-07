@@ -5,64 +5,64 @@ title: Contact
 description: Voici la page de contact.
 ---
 
-<section class="one">
-    <div class="container">
+<section class="section-padding">
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<div class="card contact">
+					<div class="form-top">
+						<span>Formulaire de contact {{page.url}} </span>
+					</div>
+					<br>
+					<form action="https://formspree.io/f/id_formspree" method="POST">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<input type="text" class="form-control " id="firstname" name="firstname" value="" placeholder="Prenom">
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<input type="text" class="form-control " id="lastname" name="lastname" value="" placeholder="Nom">
+							</div>
+						</div>
+					</div>
 
-        <div id="contact">
-            <h1>Contact</h1>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<input type="text" class="form-control " id="email" name="email" value="" placeholder="Email">
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<input type="text" class="form-control " id="phone" name="phone" value="" placeholder="Telephone">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<select name="subject" class="form-control" id="subject">
+							<option value="Demande d'information générale">Demande d'information générale</option>
+							<option value="Demande d'information tarifaire">Demande d'information tarifaire</option>
+							<option value="Proposition commerciale">Proposition commerciale</option>
+							<option value="Recrutement">Recrutement</option>
+							<option value="Autre">Autre</option>
+						</select>
+					</div>
 
-
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
-                    <form action="https://formspree.io/f/xeogqdek" method="POST">
-
-                        <div class="form-group has-feedback <?=$data['nom']['status']?>">
-                            <label for="nom">Nom</label>
-                            <input type="text" class="form-control" id="nom" name="nom" placeholder="NOM"
-                                value="{{ data['nom']['value'] }}">
-                        </div>
-
-                        <div class="form-group <?=$data['ville']['status']?>">
-                            <label for="ville">Ville</label>
-                            <input type="text" class="form-control" id="ville" name="ville" placeholder="Ville"
-                                value="{{ data['ville']['value'] }}">
-
-                        </div>
-
-
-
-                        <div class="form-group has-feedback <?=$data['email']['status']?>">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="text@exemple.fr" value="{{ data['email']['value'] }}">
-                        </div>
-                        <div class="form-group has-feedback <?=$data['telephone']['status']?>">
-                            <label for="telephone">Téléphone</label>
-                            <input type="text" class="form-control" id="telephone" name="telephone"
-                                placeholder="06 00 00 00 00" value="{{ data['telephone']['value'] }}">
-                        </div>
-
-                        <div class="form-group has-feedback <?=$data['objet']['status']?>">
-                            <label for="objet">Objet</label>
-                            <select class="form-control" id="objet" name="objet">
-                                <option value="Demande d'information générale">Demande d'information générale</option>
-                                <option value="Demande d'information tarifaire">Demande d'information tarifaire</option>
-                                <option value="Proposition commerciale">Proposition commerciale</option>
-                                <option value="Recrutement">Recrutement</option>
-                                <option value="Autre">Autre</option>
-                            </select>
-                        </div>
-                        <div class="form-group has-feedback <?=$data['message']['status']?>">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" name="message"
-                                rows="6">{{ data['message']['value'] }}</textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" name="contact" class="button">Envoyer</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+					<div class="form-group">
+						<textarea rows="6" name="message" class="form-control" id="message" placeholder="Message"></textarea>
+					</div>
+					<br>
+					<br>
+					<div class="text-center">
+						<button type="submit" name="contact" class="button">Envoyer</button>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
 </section>
