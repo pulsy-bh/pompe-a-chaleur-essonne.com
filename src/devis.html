@@ -14,7 +14,11 @@ description: Réalisez votre devis en quelques instants en ligne. Simple, rapide
 			<div class="row">
 
 				<div class="col-sm-12">
-					<form action="https://formspree.io/f/id_formspree" method="POST">
+					<form method="post" action="{{ site.data.company.url.notify }}">
+						<input type="hidden" name="lang" value="fr">
+						<input type="hidden" name="type" value="devis">
+						<input type="hidden" name="website" value="{{ site.data.company.websiteId }}">
+						<input type="hidden" name="redirectUrl" value="{{site.url}}{% link formulaire-succes.html %}">
 					<div class="row">
 						<div class="col-sm-5">
 							<fieldset>
@@ -116,7 +120,8 @@ description: Réalisez votre devis en quelques instants en ligne. Simple, rapide
 					<br><br><br><br>
 					<br>
 					<div class="buttondevis text-center">
-						<button type="submit" name="devis" class="button">Envoyer</button>
+						<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+						<button type="submit" name="devis" class="button" onclick="return validateForm(event)">Envoyer</button>
 					</div>
 					</form>
 				</div>
@@ -124,3 +129,17 @@ description: Réalisez votre devis en quelques instants en ligne. Simple, rapide
 		</div>
 	</div>
 </section>
+
+<script>
+function validateForm(event) {
+    event.preventDefault();
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LcOa0ErAAAAACIAj_x95lN3JR_DwyiXCBFjPqKi', {action: 'devis'})
+        .then(function(token) {
+            document.getElementById('g-recaptcha-response').value = token;
+            document.querySelector('form').submit();
+        });
+    });
+    return false;
+}
+</script>

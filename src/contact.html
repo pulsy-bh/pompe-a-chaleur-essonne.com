@@ -1,8 +1,9 @@
 ---
 layout: default
 permalink: /contact
-title: Contactez-nous rapidement pour plus d'informations
-description: Besoin d'information générale, tarifaire ou autres ? Contactez-nous en quelques clics via le formulaire de contact. Nous vous recontacterons rapidement !
+title: "Contactez-nous rapidement pour plus d'informations"
+description: "Besoin d'information générale, tarifaire ou autres ? Contactez-nous en quelques clics via le formulaire de contact. Nous vous recontacterons rapidement !"
+keywords: "contact"
 ---
 
 <section class="section-padding">
@@ -15,7 +16,11 @@ description: Besoin d'information générale, tarifaire ou autres ? Contactez-no
 						<span>Formulaire de contact {{page.url}} </span>
 					</div>
 					<br>
-					<form action="https://formspree.io/f/id_formspree" method="POST">
+					<form method="post" action="{{ site.data.company.url.notify }}">
+						<input type="hidden" name="lang" value="fr">
+						<input type="hidden" name="type" value="contact">
+						<input type="hidden" name="website" value="{{ site.data.company.websiteId }}">
+						<input type="hidden" name="redirectUrl" value="{{site.url}}{% link formulaire-succes.html %}">
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="form-group">
@@ -57,7 +62,8 @@ description: Besoin d'information générale, tarifaire ou autres ? Contactez-no
 					<br>
 					<br>
 					<div class="text-center">
-						<button type="submit" name="contact" class="button">Envoyer</button>
+						<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+						<button type="submit" name="contact" class="button" onclick="return validateForm(event)">Envoyer</button>
 					</div>
 					</form>
 				</div>
@@ -66,3 +72,17 @@ description: Besoin d'information générale, tarifaire ou autres ? Contactez-no
 	</div>
 	</div>
 </section>
+
+<script>
+function validateForm(event) {
+    event.preventDefault();
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LcOa0ErAAAAACIAj_x95lN3JR_DwyiXCBFjPqKi', {action: 'contact'})
+        .then(function(token) {
+            document.getElementById('g-recaptcha-response').value = token;
+            document.querySelector('form').submit();
+        });
+    });
+    return false;
+}
+</script>

@@ -3,7 +3,11 @@
         <span>Simulez votre crédit</span>
     </div> -->
     <div class="inner-predevis">
-        <form action="https://formspree.io/f/xjkwvzkn" method="POST">
+        <form method="post" action="{{ site.data.company.url.notify }}">
+            <input type="hidden" name="lang" value="fr">
+            <input type="hidden" name="type" value="Pre devis">
+            <input type="hidden" name="website" value="{{ site.data.company.websiteId }}">
+            <input type="hidden" name="redirectUrl" value="{{site.url}}{% link formulaire-succes.html %}">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group has-feedback">
@@ -49,10 +53,25 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <div class="form-group">
-                        <button type="submit" name="devis" class="button large">Envoyer</button>
+                        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                        <button type="submit" name="devis" class="button large" onclick="return validateForm(event)">Envoyer</button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+<script>
+function validateForm(event) {
+    event.preventDefault();
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LcOa0ErAAAAACIAj_x95lN3JR_DwyiXCBFjPqKi', {action: 'pre-devis'})
+        .then(function(token) {
+            document.getElementById('g-recaptcha-response').value = token;
+            document.querySelector('form').submit();
+        });
+    });
+    return false;
+}
+</script>
