@@ -16,15 +16,17 @@ keywords: "contact"
 						<span>Formulaire de contact</span>
 					</div>
 					<br>
-					<form method="post" action="{{ site.data.company.url.notify }}">
-						<input type="hidden" name="lang" value="fr">
-						<input type="hidden" name="type" value="contact">
-						<input type="hidden" name="website" value="{{ site.data.company.websiteId }}">
-						<input type="hidden" name="redirectUrl" value="{{site.url}}/formulaire-succes">
+					<form  method="post" id="contactForm" action="{{ site.data.company.url.notify }}">
+						<input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
+						<input type="hidden" name="type" value="contact" />
+						<input type="hidden" name="website" value="{{ site.data.company.website }}" />
+						<input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
+						<input type="hidden" name="condition" value="on" />
+						<input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}">
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="form-group">
-								<input type="text" class="form-control " id="firstname" name="firstname" value="" placeholder="Prenom">
+								<input type="text" class="form-control " id="name" name="name" value="" placeholder="Nom">
 							</div>
 						</div>
 						<div class="col-sm-12">
@@ -59,11 +61,20 @@ keywords: "contact"
 					<div class="form-group">
 						<textarea rows="6" name="message" class="form-control" id="message" placeholder="Message"></textarea>
 					</div>
+					<div class="col-sm-12">
+						<div class="form-group">
+						  <div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client }}">
+						  </div>
+						  <br />
+						  <div id="contact-form-response" class="text-white" style="color: #000 !important; font-size: 1rem;">
+						  </div>
+						  <!-- Bouton submit caché supprimé pour éviter les conflits -->
+						</div>
+					  </div>
 					<br>
 					<br>
 					<div class="text-center">
-						<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-						<button type="submit" name="contact" class="button" onclick="return validateForm(event)">Envoyer</button>
+						<button type="submit" name="contact" class="button">Envoyer</button>
 					</div>
 					</form>
 				</div>
@@ -72,17 +83,3 @@ keywords: "contact"
 	</div>
 	</div>
 </section>
-
-<script>
-function validateForm(event) {
-    event.preventDefault();
-    grecaptcha.ready(function() {
-        grecaptcha.execute('6LcOa0ErAAAAACIAj_x95lN3JR_DwyiXCBFjPqKi', {action: 'contact'})
-        .then(function(token) {
-            document.getElementById('g-recaptcha-response').value = token;
-            document.querySelector('form').submit();
-        });
-    });
-    return false;
-}
-</script>

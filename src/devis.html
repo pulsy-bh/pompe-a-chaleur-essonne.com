@@ -14,11 +14,13 @@ description: Réalisez votre devis en quelques instants en ligne. Simple, rapide
 			<div class="row">
 
 				<div class="col-sm-12">
-					<form method="post" action="{{ site.data.company.url.notify }}">
-						<input type="hidden" name="lang" value="fr">
-						<input type="hidden" name="type" value="devis">
-						<input type="hidden" name="website" value="{{ site.data.company.websiteId }}">
-						<input type="hidden" name="redirectUrl" value="{{site.url}}/formulaire-succes">
+					<form method="post" id="devisForm" action="{{ site.data.company.url.notify }}">
+						<input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
+						<input type="hidden" name="type" value="devis" />
+						<input type="hidden" name="website" value="{{ site.data.company.website }}" />
+						<input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
+						<input type="hidden" name="condition" value="on" />
+						<input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}">
 					<div class="row">
 						<div class="col-sm-5">
 							<fieldset>
@@ -27,8 +29,8 @@ description: Réalisez votre devis en quelques instants en ligne. Simple, rapide
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
-											<label for="firstname">Prénom*</label>
-											<input required type="text" class="form-control " id="firstname" name="firstname" value="">
+											<label for="name">Prénom*</label>
+											<input required type="text" class="form-control " id="name" name="name" value="">
 										</div>
 									</div>
 									<div class="col-sm-6">
@@ -117,11 +119,20 @@ description: Réalisez votre devis en quelques instants en ligne. Simple, rapide
 							</fieldset>
 						</div>
 					</div>
-					<br><br><br><br>
+					<br><br>
+					<div class="col-sm-12">
+						<div class="form-group">
+						  <div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client }}">
+						  </div>
+						  <br />
+						  <div id="devis-form-response" class="text-white" style="color: #000 !important; font-size: 1rem;">
+						  </div>
+						  <input style="display: none" type="submit" value="Submit" class="wpcf7-form-control wpcf7-submit" />
+						</div>
+					  </div>
 					<br>
 					<div class="buttondevis text-center">
-						<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-						<button type="submit" name="devis" class="button" onclick="return validateForm(event)">Envoyer</button>
+						<button type="submit" name="devis" class="button">Envoyer</button>
 					</div>
 					</form>
 				</div>
